@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Biblioteca de Manuais do Corpo de Bombeiros</title>
+    <meta name="description" content="Entre em contato com a Biblioteca de Manuais do Corpo de Bombeiros. Sugestões, dúvidas ou correções.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="canonical" href="https://seu-usuario.github.io/biblioteca-manuais/contato.html">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f4f6fa; color: #1a1a2e; min-height: 100vh; }
+        
+        .header-bar {
+            background: #0b1a2e;
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .header-bar .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: #fff;
+        }
+        
+        .header-bar .logo-area .icon {
+            background: #c8102e;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #fff;
+        }
+        
+        .header-bar .logo-area h1 { font-size: 18px; font-weight: 700; }
+        .header-bar .logo-area span { font-size: 11px; color: #a0b4c9; display: block; }
+        
+        .header-bar .nav-links { display: flex; gap: 20px; }
+        .header-bar .nav-links a { color: #a0b4c9; text-decoration: none; font-size: 14px; transition: 0.2s; }
+        .header-bar .nav-links a:hover { color: #fff; }
+        .header-bar .nav-links a.active { color: #fff; border-bottom: 2px solid #c8102e; }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .content-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #edf2f7;
+        }
+        
+        .content-card h2 {
+            color: #0b1a2e;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        
+        .content-card .subtitle {
+            color: #7a8fa5;
+            font-size: 15px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 16px;
+        }
+        
+        .content-card p {
+            color: #4a5a6e;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+        
+        .content-card h3 {
+            color: #0b1a2e;
+            font-size: 20px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        
+        .content-card .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .content-card .contact-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #edf2f7;
+            text-align: center;
+            transition: 0.2s;
+        }
+        
+        .content-card .contact-item:hover {
+            border-color: #c8102e;
+            transform: translateY(-2px);
+        }
+        
+        .content-card .contact-item i {
+            font-size: 28px;
+            color: #c8102e;
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        .content-card .contact-item h4 {
+            color: #0b1a2e;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+        
+        .content-card .contact-item p {
+            color: #7a8fa5;
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+        
+        .content-card .contact-item a {
+            color: #c8102e;
+            text-decoration: none;
+        }
+        
+        .content-card .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .content-card .highlight-box {
+            background: #f0f4fe;
+            border-left: 4px solid #c8102e;
+            padding: 18px 22px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 15px;
+            color: #1a2a40;
+        }
+        
+        .footer {
+            max-width: 900px;
+            margin: 20px auto 40px;
+            padding: 0 20px;
+            text-align: center;
+            color: #a0b4c9;
+            font-size: 13px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-bar { padding: 12px 16px; flex-direction: column; align-items: flex-start; }
+            .content-card { padding: 24px 20px; }
+            .content-card h2 { font-size: 22px; }
+            .header-bar .nav-links { flex-wrap: wrap; gap: 12px; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-bar">
+        <div class="logo-area">
+            <div class="icon"><i class="fas fa-fire-extinguisher"></i></div>
+            <div>
+                <h1>Biblioteca de Manuais</h1>
+                <span>Corpo de Bombeiros Militar SP</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Início</a>
+            <a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a>
+            <a href="privacidade.html"><i class="fas fa-shield-alt"></i> Privacidade</a>
+            <a href="contato.html" class="active"><i class="fas fa-envelope"></i> Contato</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-card">
+            <h2>Entre em Contato</h2>
+            <div class="subtitle"><i class="fas fa-comments"></i> Sua opinião é importante para nós</div>
+            
+            <p>
+                A <strong>Biblioteca de Manuais do Corpo de Bombeiros</strong> está sempre aberta 
+                a sugestões, dúvidas e feedbacks. Se você encontrou algum problema com os links, 
+                tem sugestões de novos manuais ou deseja relatar um erro, entre em contato conosco.
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>E-mail</h4>
+                    <p>
+                        <a href="mailto:seu-email@exemplo.com">seu-email@exemplo.com</a>
+                    </p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-github"></i>
+                    <h4>GitHub</h4>
+                    <p>
+                        <a href="https://github.com/seu-usuario/biblioteca-manuais" target="_blank">Ver repositório</a>
+                    </p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h4>Emergência</h4>
+                    <p style="font-weight:700; color:#c8102e; font-size:18px;">193</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Corpo de Bombeiros SP</h4>
+                    <p>
+                        <a href="https://www.bombeiros.sp.gov.br" target="_blank">Site oficial</a>
+                    </p>
+                </div>
+            </div>
+            
+            <h3>📝 O que podemos ajudar?</h3>
+            <p>
+                Fique à vontade para entrar em contato sobre os seguintes assuntos:
+            </p>
+            <ul>
+                <li><strong>Links quebrados:</strong> Se algum manual não estiver acessível</li>
+                <li><strong>Sugestões de manuais:</strong> Documentos que você gostaria de ver adicionados</li>
+                <li><strong>Correções:</strong> Erros nas descrições ou informações dos manuais</li>
+                <li><strong>Dúvidas gerais:</strong> Perguntas sobre o conteúdo ou funcionamento do site</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <i class="fas fa-clock" style="color:#c8102e; margin-right:10px;"></i>
+                <strong>Tempo de resposta:</strong> Nosso compromisso é responder todas as mensagens 
+                em até <strong>48 horas úteis</strong>.
+            </div>
+            
+            <h3>🔗 Links Úteis</h3>
+            <ul>
+                <li><a href="sobre.html" style="color:#c8102e;">Sobre a Biblioteca de Manuais</a></li>
+                <li><a href="privacidade.html" style="color:#c8102e;">Política de Privacidade</a></li>
+                <li><a href="https://www.bombeiros.sp.gov.br" target="_blank" style="color:#c8102e;">Site Oficial do Corpo de Bombeiros SP</a></li>
+            </ul>
+            
+            <p style="font-size:13px; color:#7a8fa5; margin-top:20px;">
+                <i class="fas fa-info-circle"></i> Sua mensagem será tratada com confidencialidade 
+                e utilizada apenas para melhorar a experiência do site.
+            </p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2026 Biblioteca de Manuais - Corpo de Bombeiros Militar SP</p>
+    </div>
+    
+</body>
+</html>

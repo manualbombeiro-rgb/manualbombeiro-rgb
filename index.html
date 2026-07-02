@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Manuais - Corpo de Bombeiros Militar SP</title>
+    <meta name="description" content="Biblioteca digital com 52 manuais operacionais do Corpo de Bombeiros Militar do Estado de São Paulo. Acesso gratuito a documentos técnicos sobre prevenção, combate a incêndios, salvamento e emergências.">
+    <meta name="keywords" content="corpo de bombeiros, manuais operacionais, bombeiro militar, cbpmesp, combate a incêndio, salvamento, atendimento pré-hospitalar, segurança, prevenção">
+    <meta name="author" content="Corpo de Bombeiros Militar do Estado de São Paulo">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Biblioteca de Manuais - Corpo de Bombeiros Militar SP">
+    <meta property="og:description" content="Acesse 52 manuais operacionais do Corpo de Bombeiros Militar de São Paulo. Documentos técnicos sobre segurança, prevenção e salvamento.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seu-usuario.github.io/biblioteca-manuais/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Biblioteca de Manuais - Corpo de Bombeiros Militar SP">
+    <link rel="canonical" href="https://seu-usuario.github.io/biblioteca-manuais/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ===== GOOGLE ADSENSE ===== -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-SEU_CODIGO_AQUI" crossorigin="anonymous"></script>
+    
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background: #f4f6fa;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            color: #1a1a2e;
+        }
+
+        /* ===== SCROLLBAR PERSONALIZADA ===== */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e8ecf1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c8102e;
+            border-radius: 10px;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            width: 320px;
+            min-width: 320px;
+            background: #0b1a2e;
+            color: #e8edf3;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar-header {
+            padding: 22px 20px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-header .logo-icon {
+            background: #c8102e;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .sidebar-header .brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header .brand h1 {
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .sidebar-header .brand span {
+            font-size: 11px;
+            color: #a0b4c9;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .sidebar-nav {
+            padding: 10px 12px 4px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            color: #a0b4c9;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+
+        .sidebar-nav .nav-link:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+        }
+
+        .sidebar-nav .nav-link i {
+            width: 20px;
+            color: #c8102e;
+        }
+
+        .search-box {
+            padding: 8px 20px 10px;
+            flex-shrink: 0;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 14px 10px 40px;
+            border-radius: 30px;
+            border: none;
+            background: rgba(255, 255, 255, 0.08);
+            color: #e8edf3;
+            font-size: 14px;
+            outline: none;
+            transition: 0.25s;
+        }
+
+        .search-box input::placeholder {
+            color: #7a8fa5;
+            font-weight: 300;
+        }
+
+        .search-box input:focus {
+            background: rgba(255, 255, 255, 0.16);
+            box-shadow: 0 0 0 2px rgba(200, 16, 46, 0.3);
+        }
+
+        .search-box .search-wrapper {
+            position: relative;
+        }
+
+        .search-box .search-wrapper i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #7a8fa5;
+            font-size: 14px;
+            pointer-events: none;
+        }
+
+        .nav-manuals {
+            flex: 1;
+            overflow-y: auto;
+            padding: 4px 12px 20px;
+        }
+
+        .nav-manuals .manual-item {
+            margin-bottom: 2px;
+            border-radius: 10px;
+            transition: background 0.2s;
+        }
+
+        .nav-manuals .manual-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .manual-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-weight: 500;
+            font-size: 13px;
+            color: #cfddee;
+            user-select: none;
+        }
+
+        .manual-header:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+        }
+
+        .manual-header .manual-icon {
+            font-size: 14px;
+            width: 24px;
+            text-align: center;
+            color: #c8102e;
+            flex-shrink: 0;
+        }
+
+        .manual-header .manual-title {
+            flex: 1;
+            font-size: 12px;
+            line-height: 1.3;
+        }
+
+        .manual-header .manual-number {
+            font-size: 10px;
+            color: #5a7a9a;
+            font-weight: 400;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 8px;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-footer {
+            padding: 14px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 11px;
+            color: #5a7a9a;
+            display: flex;
+            justify-content: space-between;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .sidebar-footer a {
+            color: #7a9ab0;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .sidebar-footer a:hover {
+            color: #c8102e;
+        }
+
+        /* ===== CONTEÚDO PRINCIPAL ===== */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background: #f4f6fa;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .topbar {
+            background: #fff;
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e2e8f0;
+            flex-shrink: 0;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .topbar .hamburger {
+            display: none;
+            font-size: 22px;
+            background: none;
+            border: none;
+            color: #1a1a2e;
+            cursor: pointer;
+            padding: 4px 8px;
+        }
+
+        .topbar .page-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0b1a2e;
+        }
+
+        .topbar .page-title small {
+            font-weight: 400;
+            font-size: 14px;
+            color: #6b7f96;
+            margin-left: 10px;
+        }
+
+        .topbar .stats-badge {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 13px;
+            color: #3a4a5e;
+            flex-wrap: wrap;
+        }
+
+        .topbar .stats-badge .stat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #f4f6fa;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .topbar .stats-badge .stat i {
+            color: #c8102e;
+        }
+
+        .content-area {
+            padding: 32px 40px;
+        }
+
+        .content-area .content-intro {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 28px;
+            border: 1px solid #edf2f7;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .content-area .content-intro h2 {
+            color: #0b1a2e;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .content-area .content-intro p {
+            color: #4a5a6e;
+            line-height: 1.7;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .content-area .content-intro .highlight-box {
+            background: #f0f4fe;
+            border-left: 4px solid #c8102e;
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin-top: 12px;
+            font-size: 14px;
+            color: #1a2a40;
+        }
+
+        .content-area .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .content-area .manual-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid #edf2f7;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .content-area .manual-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-color: #dce3ec;
+        }
+
+        .content-area .manual-card .card-number {
+            font-size: 11px;
+            color: #a0b4c9;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .content-area .manual-card h3 {
+            font-size: 16px;
+            color: #0b1a2e;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .content-area .manual-card .meta {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .content-area .manual-card .meta span {
+            color: #7a8fa5;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .content-area .manual-card .meta span i {
+            color: #c8102e;
+            font-size: 11px;
+        }
+
+        .content-area .manual-card .descricao {
+            color: #4a5a6e;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .content-area .manual-card .link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #c8102e;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .content-area .manual-card .link:hover {
+            border-bottom-color: #c8102e;
+            color: #a00d26;
+        }
+
+        .content-area .manual-card .link i {
+            font-size: 12px;
+            transition: transform 0.2s;
+        }
+
+        .content-area .manual-card .link:hover i {
+            transform: translateX(3px);
+        }
+
+        .sem-resultados {
+            text-align: center;
+            padding: 60px 20px;
+            color: #7a8fa5;
+            grid-column: 1 / -1;
+        }
+
+        .sem-resultados i {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 16px;
+            color: #dce3ec;
+        }
+
+        /* ===== ADSENSE - BANNER RODAPÉ ===== */
+        .adsense-footer {
+            background: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            min-height: 70px;
+        }
+
+        .adsense-footer .adsense-wrapper {
+            max-width: 728px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .adsense-footer .adsense-label {
+            font-size: 9px;
+            color: #a0b4c9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+            background: #f4f6fa;
+            padding: 2px 10px;
+            border-radius: 12px;
+        }
+
+        .adsense-footer .adsense-container {
+            background: #f8f9fa;
+            border-radius: 8px;
+            min-height: 60px;
+            min-width: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #dce3ec;
+            padding: 8px;
+            font-size: 12px;
+            color: #a0b4c9;
+            flex: 1;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 992px) {
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                transform: translateX(-100%);
+                width: 300px;
+                min-width: 300px;
+                height: 100vh;
+                z-index: 1050;
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .topbar .hamburger {
+                display: block;
+            }
+
+            .content-area {
+                padding: 20px 16px;
+            }
+
+            .content-area .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                padding: 12px 16px;
+            }
+
+            .topbar .page-title small {
+                display: none;
+            }
+
+            .topbar .stats-badge .stat {
+                display: none;
+            }
+
+            .adsense-footer {
+                padding: 10px 16px;
+                min-height: 60px;
+            }
+
+            .adsense-footer .adsense-container {
+                min-width: 200px;
+                min-height: 50px;
+            }
+
+            .content-area .content-intro {
+                padding: 20px;
+            }
+
+            .content-area .content-intro h2 {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                min-width: unset;
+            }
+
+            .topbar .page-title {
+                font-size: 16px;
+            }
+
+            .adsense-footer .adsense-wrapper {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .adsense-footer .adsense-container {
+                min-width: 100%;
+                min-height: 50px;
+            }
+
+            .content-area .content-intro {
+                padding: 16px;
+            }
+
+            .content-area .manual-card {
+                padding: 18px;
+            }
+        }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1040;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- OVERLAY (mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-icon">
+                <i class="fas fa-fire-extinguisher"></i>
+            </div>
+            <div class="brand">
+                <h1>Biblioteca de Manuais</h1>
+                <span>Corpo de Bombeiros</span>
+            </div>
+        </div>
+
+        <!-- Navegação adicional -->
+        <div class="sidebar-nav">
+            <a href="index.html" class="nav-link" style="color:#fff; background:rgba(255,255,255,0.06);">
+                <i class="fas fa-home"></i> Início
+            </a>
+            <a href="sobre.html" class="nav-link">
+                <i class="fas fa-info-circle"></i> Sobre
+            </a>
+            <a href="privacidade.html" class="nav-link">
+                <i class="fas fa-shield-alt"></i> Política de Privacidade
+            </a>
+            <a href="contato.html" class="nav-link">
+                <i class="fas fa-envelope"></i> Contato
+            </a>
+        </div>
+
+        <div class="search-box">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Pesquisar manuais..." />
+            </div>
+        </div>
+
+        <nav class="nav-manuals" id="navManuals"></nav>
+
+        <div class="sidebar-footer">
+            <span><i class="fas fa-book"></i> <span id="totalManuais">0</span> manuais</span>
+            <span><i class="fas fa-sync-alt"></i> <span id="dataSidebar">-</span></span>
+        </div>
+    </aside>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="main-content">
+        <header class="topbar">
+            <div style="display:flex; align-items:center; gap:12px;">
+                <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="page-title">
+                    Acervo de Manuais
+                    <small>CBPMESP</small>
+                </div>
+            </div>
+            <div class="stats-badge">
+                <span class="stat">
+                    <i class="fas fa-file-pdf"></i>
+                    <span id="totalExibindo">0</span>
+                </span>
+                <span class="stat">
+                    <i class="fas fa-clock"></i>
+                    <span id="dataAtualizacao">-</span>
+                </span>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <section class="content-area" id="contentArea">
+                <!-- INTRODUÇÃO - CONTEÚDO RICO PARA SEO -->
+                <div class="content-intro">
+                    <h2>📚 Biblioteca Digital de Manuais Operacionais</h2>
+                    <p>
+                        Bem-vindo à <strong>Biblioteca de Manuais do Corpo de Bombeiros</strong>, um acervo digital 
+                        completo com <strong>52 manuais operacionais</strong> que abrangem todas as áreas de atuação 
+                        da corporação. Este material é uma referência essencial para profissionais da segurança, 
+                        bombeiros militares, estudantes e interessados em conhecer os procedimentos e técnicas 
+                        utilizados pelo Corpo de Bombeiros Militar do Estado de São Paulo.
+                    </p>
+                    <p>
+                        Os documentos disponíveis neste acervo cobrem temas como <strong>combate a incêndios</strong>, 
+                        <strong>salvamento terrestre e aquático</strong>, <strong>atendimento pré-hospitalar</strong>, 
+                        <strong>operações com produtos perigosos</strong>, <strong>resgate em altura</strong>, 
+                        <strong>incêndios florestais</strong>, entre outras áreas fundamentais para a segurança pública.
+                    </p>
+                    <div class="highlight-box">
+                        <i class="fas fa-shield-alt" style="color:#c8102e; margin-right:10px;"></i>
+                        <strong>Missão do Corpo de Bombeiros:</strong> Preservar vidas, o patrimônio e o meio ambiente, 
+                        por meio de ações de prevenção, combate a incêndios, salvamento e atendimento pré-hospitalar.
+                        <br>
+                        <span style="font-size:13px; color:#5a7a9a; display:block; margin-top:6px;">
+                            <i class="fas fa-phone"></i> Emergência: <strong style="color:#c8102e;">193</strong>
+                        </span>
+                    </div>
+                    <p style="font-size:13px; color:#7a8fa5; margin-top:10px;">
+                        <i class="fas fa-info-circle"></i> Todos os manuais estão disponíveis para consulta gratuita. 
+                        Clique em "Acessar Manual" para visualizar ou baixar o documento completo.
+                    </p>
+                </div>
+
+                <div class="content-grid" id="manualGrid"></div>
+            </section>
+        </div>
+
+        <!-- ===== ADSENSE - BANNER RODAPÉ ===== -->
+        <div class="adsense-footer">
+            <div class="adsense-wrapper">
+                <span class="adsense-label">Publicidade</span>
+                <div class="adsense-container">
+                    <!-- Google AdSense -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-SEU_CODIGO_AQUI"
+                         data-ad-slot="SEU_SLOT_AQUI"
+                         data-ad-format="horizontal"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // ============================================================
+        // DADOS DOS MANUAIS - 52 MANUAIS COMPLETOS COM DESCRIÇÕES RICAS
+        // ============================================================
+        const DADOS_MANUAIS = [{
+            id: 1,
+            numero: "001",
+            nome: "Salvamento e Combate a Incêndio em Aeronaves",
+            descricao: "Este manual estabelece os procedimentos operacionais padrão para salvamento e combate a incêndios em aeronaves, abordando técnicas de resgate, equipamentos específicos e protocolos de segurança para situações de emergência em aeroportos e áreas de aviação.",
+            link: "https://drive.google.com/file/d/1G6GuN6K1JmYPK85_IzCa4hGw6ppZbdCx/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-01-15"
+        }, {
+            id: 2,
+            numero: "002",
+            nome: "Suprimento de Água em Combate a Incêndios",
+            descricao: "Manual detalhado sobre técnicas e procedimentos para suprimento de água em operações de combate a incêndio, incluindo métodos de captação, armazenamento e distribuição de água para garantir a eficácia das ações de combate.",
+            link: "https://drive.google.com/file/d/1Toh6hmu_zFyKgWzsAkighP7YMrGauziq/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-02-20"
+        }, {
+            id: 3,
+            numero: "003",
+            nome: "Salvamento Terrestre",
+            descricao: "Manual de procedimentos para salvamento terrestre em diversas situações, incluindo resgate em áreas de difícil acesso, atendimento a vítimas em ambientes urbanos e rurais, e técnicas de estabilização e remoção de feridos.",
+            link: "https://drive.google.com/file/d/1rqCI5RZZjcKQsbJDVCzzz3JTzT-GZm3D/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 4,
+            numero: "004",
+            nome: "Combate a Incêndios Florestais",
+            descricao: "Estratégias e táticas para combate a incêndios em áreas florestais e de vegetação, abordando o comportamento do fogo em diferentes condições climáticas, técnicas de combate direto e indireto, e ações de preservação ambiental.",
+            link: "https://drive.google.com/file/d/1EVslLh28RkdhzaC1S-GQlh9F8QSAKmzw/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 5,
+            numero: "005",
+            nome: "Atendimento a Incêndios em Indústrias",
+            descricao: "Manual de procedimentos para atendimento a ocorrências de incêndio em ambientes industriais, considerando os riscos específicos de cada tipo de indústria, produtos químicos presentes e estratégias de combate em áreas de grande porte.",
+            link: "https://drive.google.com/file/d/1jv76dJt1NGITfVPyq3QDTm3wSYepUMF0/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 6,
+            numero: "006",
+            nome: "Combate a Incêndio em Composições Metroviárias e Túneis",
+            descricao: "Manual operacional para combate a incêndio e salvamento em sistemas metroviários, ferrovias e túneis rodoviários, com foco em evacuação, ventilação tática e resgate em espaços confinados.",
+            link: "https://drive.google.com/file/d/1x3IL3RtSgcBKHHYUibiKRCOBqYBsETxz/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 7,
+            numero: "007",
+            nome: "Combate a Incêndios em Instalações Portuárias",
+            descricao: "Procedimentos operacionais para combate a incêndios em instalações portuárias, navios e embarcações, abordando os desafios específicos do ambiente marítimo e técnicas de contenção em áreas de grande movimentação de cargas.",
+            link: "https://drive.google.com/file/d/1ailG7tblILEX5Iw7V_Pa6S7X9ouoU7y8/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 8,
+            numero: "008",
+            nome: "Bombas de Incêndio",
+            descricao: "Guia completo sobre operação, manutenção e emprego de bombas de incêndio em operações, incluindo tipos de bombas, especificações técnicas, procedimentos de teste e manutenção preventiva.",
+            link: "https://drive.google.com/file/d/1_nSdPT4_c7LbaKA-5Ksc9uE0eSmKO9AS/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 9,
+            numero: "009",
+            nome: "Salvamento Aquático",
+            descricao: "Manual de técnicas e procedimentos para salvamento aquático em diferentes cenários, incluindo praias, rios, lagos e piscinas, com foco em prevenção de afogamentos e técnicas de resgate com equipamentos específicos.",
+            link: "https://drive.google.com/file/d/1VyvJNeDNzqFWiHUp-ALW1ZPb6T6pm-uR/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 10,
+            numero: "010",
+            nome: "Salvamento em Enchentes e Inundações",
+            descricao: "Procedimentos operacionais para atuação em situações de enchentes e inundações, abordando resgate de pessoas ilhadas, evacuação de áreas de risco e técnicas de navegação em águas turbulentas.",
+            link: "https://drive.google.com/file/d/1KrIrsErNMecFcvPZU8sdrABk0jp1_vPN/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 11,
+            numero: "011",
+            nome: "Manual do Guarda-Vidas",
+            descricao: "Manual completo para atuação de guarda-vidas em diferentes ambientes aquáticos, incluindo técnicas de prevenção, resgate, primeiros socorros e uso de equipamentos de salvamento em praias, rios e piscinas.",
+            link: "https://drive.google.com/file/d/1uf9M-qu8yBsiiV9qvRpjTmUtDrciZNYi/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 12,
+            numero: "012",
+            nome: "Resgate e Emergências Médicas",
+            descricao: "Manual de procedimentos para resgate e atendimento a emergências médicas, abordando avaliação inicial, suporte básico de vida, imobilização e transporte de vítimas em situações de urgência.",
+            link: "https://drive.google.com/file/d/1Y8aBXNM1UpGU1QXlXPg_ODRXzUztMiCM/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 13,
+            numero: "013",
+            nome: "Comunicações Operacionais",
+            descricao: "Protocolos e procedimentos para comunicações em operações de bombeiros, incluindo rádio comunicação, códigos operacionais, estrutura de comando e fluxo de informações durante ocorrências.",
+            link: "https://drive.google.com/file/d/13BvFd1AQn9-zgpKGi1RdTpS7hsH6NWee/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 14,
+            numero: "014",
+            nome: "Ventilação Tática",
+            descricao: "Manual sobre técnicas e estratégias para ventilação tática em operações de combate a incêndio, abordando os princípios de ventilação, equipamentos utilizados e métodos para remoção de fumaça e gases tóxicos.",
+            link: "https://drive.google.com/file/d/1OHz-Dw3s7Mouyucw446nri4NyoDr3AQQ/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 15,
+            numero: "015",
+            nome: "Condução de Viaturas em Emergências",
+            descricao: "Manual de procedimentos para condução segura de viaturas de bombeiros em situações de emergência, abordando técnicas de direção defensiva, uso de sirenes e sinais luminosos, e protocolos de deslocamento rápido.",
+            link: "https://drive.google.com/file/d/1WSN6DstQIMuwn8jv3gQFRt1UuM44NzRB/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 16,
+            numero: "016",
+            nome: "Combate a Incêndio em Edifícios Altos",
+            descricao: "Estratégias e táticas para combate a incêndio em edifícios de múltiplos pavimentos, incluindo técnicas de evacuação, combate interno, ventilação e uso de equipamentos específicos para operações em altura.",
+            link: "https://drive.google.com/file/d/1w7i6cY1l6n5ngKzC8eBzuP8GU_5rRXTR/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 17,
+            numero: "017",
+            nome: "Equipamentos de Proteção Individual",
+            descricao: "Guia detalhado sobre equipamentos de proteção individual e respiratória para bombeiros, incluindo seleção, uso correto, manutenção e inspeção de EPIs para garantir a segurança operacional.",
+            link: "https://drive.google.com/file/d/1ebSqMqhlEq3-q-QG2pZkiQqUojSQkNtt/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 18,
+            numero: "018",
+            nome: "Proteção de Salvados",
+            descricao: "Manual de procedimentos para proteção de bens e materiais durante operações de combate a incêndio, abordando técnicas de cobertura, remoção e preservação de itens durante intervenções.",
+            link: "https://drive.google.com/file/d/1F1VkG_9oliUat9-Xh9BTecu1ZXJAPFHS/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 19,
+            numero: "019",
+            nome: "Pesquisas de Causas de Incêndio",
+            descricao: "Metodologias e procedimentos para investigação de causas de incêndios, abordando técnicas de coleta de evidências, análise de padrões de queima e elaboração de laudos técnicos periciais.",
+            link: "https://drive.google.com/file/d/1-AWyCVkGdnQ2JlUhRSzLtDHfUAN-jDj3/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 20,
+            numero: "020",
+            nome: "Aberturas Forçadas",
+            descricao: "Manual de técnicas e equipamentos para abertura forçada em operações de bombeiros, incluindo métodos de entrada rápida em edificações, veículos e estruturas para acesso a vítimas e combate a incêndios.",
+            link: "https://drive.google.com/file/d/10ynMsdOX04kSbBKFWWN6jQTzYcjZhBvs/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 21,
+            numero: "021",
+            nome: "Atendimento a Emergências com Produtos Perigosos",
+            descricao: "Manual de procedimentos para atendimento a emergências envolvendo produtos perigosos, abordando identificação de riscos, contenção de vazamentos, equipamentos de proteção e protocolos de evacuação em acidentes químicos.",
+            link: "https://drive.google.com/file/d/1KypfZw6PnFwkzIKQqfbtJEQtyFTHv25n/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 22,
+            numero: "022",
+            nome: "Princípios de Comando em Operações",
+            descricao: "Manual sobre fundamentos de comando e controle em operações de bombeiros, abordando a estrutura de liderança, tomada de decisão, gestão de recursos e coordenação de equipes em situações de emergência.",
+            link: "https://drive.google.com/file/d/1GBcKvG9xXM8p5t0yfHFeCMNd5KpFfQIA/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 23,
+            numero: "023",
+            nome: "Emprego de Mangueiras e Esguichos",
+            descricao: "Guia completo sobre o emprego de mangueiras, esguichos e acessórios hidráulicos em operações de combate a incêndio, abordando técnicas de manuseio, manutenção e operação de equipamentos hidráulicos.",
+            link: "https://drive.google.com/file/d/1vaiVk4l7KhwqPFffx_DmXj-xlGsCc7QY/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 24,
+            numero: "024",
+            nome: "Análise de Risco em Incêndio Estrutural",
+            descricao: "Manual de metodologias para análise de risco em incêndios estruturais, abordando avaliação de segurança de edificações, identificação de vulnerabilidades e elaboração de planos de intervenção.",
+            link: "https://drive.google.com/file/d/1G9E4B4Bew7v8pugczfp7eOOVQr_uANj_/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 25,
+            numero: "025",
+            nome: "Emergências em Vasos Pressurizados",
+            descricao: "Procedimentos para atuação em emergências com vasos pressurizados, incluindo identificação de riscos, técnicas de resfriamento, controle de vazamentos e protocolos de evacuação em indústrias.",
+            link: "https://drive.google.com/file/d/1oQOvcI57d7aSW3OeI0e-Rnx6aQ6andUj/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 26,
+            numero: "026",
+            nome: "Salvamento em Altura",
+            descricao: "Manual de técnicas e procedimentos para salvamento em altura, abordando rapel, escalada, uso de cordas e equipamentos de ancoragem para resgate em edifícios, pontes e estruturas elevadas.",
+            link: "https://drive.google.com/file/d/1KHJLxR11ltUwXFpHlOJ94xWt-3lzJNT3/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 27,
+            numero: "027",
+            nome: "Operações de Mergulho",
+            descricao: "Manual de procedimentos para operações de mergulho em emergências, abordando técnicas de mergulho autônomo, equipamentos, segurança subaquática e resgate em ambientes aquáticos.",
+            link: "https://drive.google.com/file/d/1D_LNcA2lCaDGxQaMQOilmZjUHXeAGcMz/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 28,
+            numero: "028",
+            nome: "Combate a Incêndio em Habitação Precária",
+            descricao: "Estratégias e táticas para combate a incêndio em áreas de habitação precária, considerando riscos específicos, acesso limitado e técnicas de combate em comunidades e áreas de vulnerabilidade social.",
+            link: "https://drive.google.com/file/d/1eBaTP3fcxQWnEn7PDHO3PDuhgrCq4QNN/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 29,
+            numero: "029",
+            nome: "Operação de Viaturas Aéreas",
+            descricao: "Manual sobre operação de viaturas aéreas em serviços de bombeiros, incluindo procedimentos para uso de helicópteros em resgate, combate a incêndios e apoio logístico em emergências.",
+            link: "https://drive.google.com/file/d/1WpTJWLSaOP1ybhrl7OvaCmUB4fzqKLbQ/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 30,
+            numero: "030",
+            nome: "Equipamento Motomecanizado",
+            descricao: "Guia completo sobre equipamentos motomecanizados utilizados pelo Corpo de Bombeiros, abordando operação, manutenção e utilização de máquinas e ferramentas motorizadas em operações.",
+            link: "https://drive.google.com/file/d/1nhi2L1s4vYTnpY2mG6uA-PIvzkNnUD8B/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 31,
+            numero: "031",
+            nome: "Condicionamento Físico",
+            descricao: "Manual de programa de condicionamento físico para bombeiros operacionais, abordando treinamento físico, preparação física, prevenção de lesões e manutenção da aptidão para o serviço.",
+            link: "https://drive.google.com/file/d/15Z_K8h1auj9c_Kcz84ci6nQ75Yq4sG3I/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 32,
+            numero: "032",
+            nome: "Estratégia e Tática de Combate a Incêndio",
+            descricao: "Manual completo sobre fundamentos estratégicos e táticos para combate a incêndios, abordando planejamento operacional, técnicas de ataque e defesa, e coordenação de equipes em grandes ocorrências.",
+            link: "https://drive.google.com/file/d/1IKdD22tlAmqaczFz97I0c5DKs-gw_8Ev/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 33,
+            numero: "033",
+            nome: "Busca e Salvamento em Cobertura Vegetal",
+            descricao: "Manual de procedimentos para busca e salvamento em áreas de cobertura vegetal de risco, incluindo técnicas de navegação, sinalização e resgate em matas, florestas e áreas de difícil acesso.",
+            link: "https://drive.google.com/file/d/1n2L0tdoLjSK4TuXwWktdkuqSYcuLcpPe/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 34,
+            numero: "034",
+            nome: "Educação Pública nos Serviços de Bombeiros",
+            descricao: "Manual de programas e estratégias de educação pública para serviços de bombeiros, abordando campanhas de prevenção, orientação à comunidade e capacitação para situações de emergência.",
+            link: "https://drive.google.com/file/d/1na5bGlHFV4l5hvGhC79G47AnfWZ0kXpT/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 35,
+            numero: "035",
+            nome: "Gerenciamento de Crises - Suicídio e Terrorismo",
+            descricao: "Manual de procedimentos para gerenciamento de crises envolvendo tentativas de suicídio e atentados terroristas, abordando técnicas de negociação, isolamento de área e atendimento a vítimas em situações de alta complexidade.",
+            link: "https://drive.google.com/file/d/1yDMhQqxrXaE7zDyw-k1W3jxYwMzqyf5z/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 36,
+            numero: "036",
+            nome: "Segurança no Serviço de Bombeiros",
+            descricao: "Manual de normas e procedimentos de segurança para o serviço de bombeiros, abordando prevenção de acidentes, uso correto de equipamentos e protocolos de segurança em todas as operações.",
+            link: "https://drive.google.com/file/d/1yiS7g8MyYgGoSZsfDlyACWc3dPry6wlE/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 37,
+            numero: "037",
+            nome: "Sistema de Comando em Emergências (SICOE)",
+            descricao: "Manual completo do Sistema de Comando e Operações em Emergências (SICOE), abordando estrutura organizacional, fluxo de comando, gestão de recursos e coordenação em grandes eventos.",
+            link: "https://drive.google.com/file/d/16bca7BWxe2g5Pagwtv3H9TH-NJSOW7MI/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 38,
+            numero: "038",
+            nome: "Comandante de Posto de Bombeiros",
+            descricao: "Manual para comandantes de postos de bombeiros, abordando gestão de equipes, planejamento operacional, administração de recursos e liderança em unidades de bombeiros.",
+            link: "https://drive.google.com/file/d/1MgrXIoBJSxnqdpD52Bi8KHrUgPJNgiV_/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 39,
+            numero: "039",
+            nome: "Liderança",
+            descricao: "Manual sobre princípios e práticas de liderança no serviço de bombeiros, abordando desenvolvimento de líderes, tomada de decisão, motivação de equipes e gestão de conflitos.",
+            link: "https://drive.google.com/file/d/1c274TMiS2wHgXK9K-5h8TRFd7TlPmjDi/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 40,
+            numero: "040",
+            nome: "Atendimento a Emergências com Produtos Radioativos",
+            descricao: "Manual de procedimentos para atendimento a emergências envolvendo produtos radioativos, abordando identificação de riscos, proteção radiológica, contenção e descontaminação em acidentes nucleares.",
+            link: "https://drive.google.com/file/d/1FFukPNvX-6i490QMHCWYkSDYPrUGlmlX/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 41,
+            numero: "041",
+            nome: "Atuação do CBM na Defesa Civil",
+            descricao: "Manual sobre atuação do Corpo de Bombeiros nas atividades de Defesa Civil, abordando prevenção, resposta e recuperação em desastres naturais e eventos adversos.",
+            link: "https://drive.google.com/file/d/1zCrhSAZZOAwOxCcFp0q-VOcxuX3cXB7F/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 42,
+            numero: "042",
+            nome: "Combate a Incêndio em Local Confinado",
+            descricao: "Manual de procedimentos para combate a incêndio em ambientes confinados, abordando técnicas de entrada, respiração autônoma, monitoramento de gases e resgate em espaços de difícil acesso.",
+            link: "https://drive.google.com/file/d/16RPIHr6YWaf90qSfjRUag_AHjk3DIhSf/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 43,
+            numero: "043",
+            nome: "Emprego de Espuma Mecânica",
+            descricao: "Manual completo sobre emprego de espuma mecânica no combate a incêndios, abordando tipos de espuma, equipamentos de aplicação, técnicas de uso e manutenção de sistemas de espuma.",
+            link: "https://drive.google.com/file/d/1DGqHnOAosHn09nrPD2NhuNtFOjN9Qdv_/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 44,
+            numero: "044",
+            nome: "Treinamento de Brigada de Incêndio",
+            descricao: "Manual para treinamento prático de brigadas de incêndio, abordando formação de equipes, técnicas de combate, uso de equipamentos e procedimentos de evacuação para edificações.",
+            link: "https://drive.google.com/file/d/1vKEdCbwD_iqwU8liBE4qiiTs4Fhl1H1i/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 45,
+            numero: "045",
+            nome: "Aspectos Legais no Serviço de Bombeiros",
+            descricao: "Manual de fundamentos legais aplicáveis ao serviço de bombeiros, abordando legislação, normas técnicas, responsabilidade civil e criminal, e aspectos jurídicos da atividade operacional.",
+            link: "https://drive.google.com/file/d/19OwpxbHWkhFq_jh1tWV2Jq3Ik0rAcn-P/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 46,
+            numero: "046",
+            nome: "Meteorologia Aplicada ao Serviço de Bombeiros",
+            descricao: "Manual de conceitos meteorológicos aplicados às operações de bombeiros, abordando previsão do tempo, comportamento de incêndios em diferentes condições climáticas e planejamento operacional.",
+            link: "https://drive.google.com/file/d/1U_yIGPUaCizzC6goat3-G69aK_6SaARE/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 47,
+            numero: "047",
+            nome: "Relacionamento com a Imprensa",
+            descricao: "Manual para relacionamento com a imprensa em situações de emergência, abordando técnicas de comunicação, preparação de entrevistas, divulgação de informações e gestão de crise midiática.",
+            link: "https://drive.google.com/file/d/1eSb8L0yczImyaUUULb6y-rlr61fYPhUD/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 48,
+            numero: "048",
+            nome: "Segurança contra Incêndio em Edificações",
+            descricao: "Manual de normas e procedimentos para segurança contra incêndio em edificações e áreas de risco, abordando sistemas de prevenção, saídas de emergência, extintores e sistemas de alarme.",
+            link: "https://drive.google.com/file/d/1xjeDIRiAb76wJSZY8dMlMTVuWfYkTzaI/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 49,
+            numero: "049",
+            nome: "Salvamento Veicular",
+            descricao: "Manual de técnicas e procedimentos para salvamento veicular, abordando desencarceramento, estabilização de veículos, corte de ferragens e atendimento a vítimas em acidentes de trânsito.",
+            link: "https://drive.google.com/file/d/1Pc6IFZ_jwGqqOhc6xU5TL0MJqoOF78oD/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 50,
+            numero: "050",
+            nome: "PHTLS - Atendimento Pré-Hospitalar",
+            descricao: "Manual PHTLS para atendimento pré-hospitalar em lesões traumáticas, abordando avaliação primária e secundária, imobilização, controle de hemorragias e transporte de vítimas.",
+            link: "https://drive.google.com/file/d/1fjQ5V2PqvY-SHjlVUvgPTfEA6GrngrqI/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 51,
+            numero: "051",
+            nome: "Procedimentos para Tentativas de Suicídio",
+            descricao: "Manual de procedimentos operacionais para atendimento a ocorrências de tentativas de suicídio, abordando técnicas de abordagem, negociação, contenção e encaminhamento para atendimento especializado.",
+            link: "https://drive.google.com/file/d/1hR19lCpxTx4nH_lxZ-EIN_TbyxDIsfNs/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }, {
+            id: 52,
+            numero: "052",
+            nome: "Protocolo de Atendimento Pré-Hospitalar",
+            descricao: "Manual de protocolos para atendimento pré-hospitalar em emergências, abordando suporte básico e avançado de vida, medicações de emergência, monitoramento e transporte de pacientes críticos.",
+            link: "https://drive.google.com/file/d/1J8lkvZvcxZ9O1jFVctFOm4-RJWp9grzR/view?usp=sharing",
+            tipo: "PDF",
+            data: "2024-03-10"
+        }];
+
+        // ============================================================
+        // FUNÇÕES DE RENDERIZAÇÃO
+        // ============================================================
+
+        const navManuals = document.getElementById('navManuals');
+        const manualGrid = document.getElementById('manualGrid');
+        const totalManuais = document.getElementById('totalManuais');
+        const totalExibindo = document.getElementById('totalExibindo');
+        const dataAtualizacao = document.getElementById('dataAtualizacao');
+        const dataSidebar = document.getElementById('dataSidebar');
+
+        // Renderiza a sidebar com todos os manuais
+        function renderSidebar(manuais) {
+            navManuals.innerHTML = '';
+            manuais.forEach((manual) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'manual-item';
+
+                const header = document.createElement('div');
+                header.className = 'manual-header';
+                header.innerHTML = `
+                    <span class="manual-icon"><i class="fas fa-file-pdf"></i></span>
+                    <span class="manual-title">${manual.nome}</span>
+                    <span class="manual-number">#${manual.numero}</span>
+                `;
+
+                header.addEventListener('click', () => {
+                    const termo = manual.nome.toLowerCase();
+                    document.getElementById('searchInput').value = termo;
+                    filtrarManuais(termo);
+                    closeSidebar();
+                });
+
+                itemDiv.appendChild(header);
+                navManuals.appendChild(itemDiv);
+            });
+        }
+
+        // Renderiza os cards na área principal
+        function renderCards(manuais) {
+            if (manuais.length === 0) {
+                manualGrid.innerHTML = `
+                    <div class="sem-resultados">
+                        <i class="fas fa-search"></i>
+                        Nenhum manual encontrado
+                        <br>
+                        <span style="font-size: 14px; color: #a0b4c9;">Tente ajustar os filtros de busca</span>
+                    </div>
+                `;
+                totalExibindo.textContent = '0';
+                return;
+            }
+
+            manualGrid.innerHTML = manuais.map(manual => `
+                <div class="manual-card">
+                    <div class="card-number">#${manual.numero}</div>
+                    <h3>${manual.nome}</h3>
+                    <div class="meta">
+                        <span><i class="fas fa-calendar-alt"></i> ${formatarData(manual.data)}</span>
+                        <span><i class="fas fa-file-pdf"></i> ${manual.tipo || 'PDF'}</span>
+                    </div>
+                    <div class="descricao">${manual.descricao}</div>
+                    <a href="${manual.link}" target="_blank" class="link">
+                        Acessar Manual <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            `).join('');
+
+            totalExibindo.textContent = manuais.length;
+        }
+
+        // Formata data
+        function formatarData(data) {
+            if (!data) return 'Data não disponível';
+            try {
+                const d = new Date(data);
+                return d.toLocaleDateString('pt-BR', { year: 'numeric', month: 'short', day: 'numeric' });
+            } catch {
+                return data;
+            }
+        }
+
+        // Filtra manuais
+        function filtrarManuais(termo) {
+            const query = termo.toLowerCase().trim();
+            if (query === '') {
+                renderCards(DADOS_MANUAIS);
+                renderSidebar(DADOS_MANUAIS);
+                totalExibindo.textContent = DADOS_MANUAIS.length;
+                return;
+            }
+            const filtrados = DADOS_MANUAIS.filter(manual => {
+                return manual.nome.toLowerCase().includes(query) ||
+                    manual.descricao.toLowerCase().includes(query) ||
+                    manual.numero.includes(query);
+            });
+            renderCards(filtrados);
+            renderSidebar(filtrados);
+        }
+
+        // ============================================================
+        // FUNÇÕES DE BUSCA
+        // ============================================================
+
+        const searchInput = document.getElementById('searchInput');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim();
+            if (query === '') {
+                renderCards(DADOS_MANUAIS);
+                renderSidebar(DADOS_MANUAIS);
+                totalExibindo.textContent = DADOS_MANUAIS.length;
+                return;
+            }
+            filtrarManuais(query);
+        });
+
+        // ============================================================
+        // MOBILE — HAMBURGER E OVERLAY
+        // ============================================================
+
+        const sidebar = document.getElementById('sidebar');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburgerBtn.addEventListener('click', openSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992) {
+                closeSidebar();
+            }
+        });
+
+        // ============================================================
+        // INICIALIZAÇÃO
+        // ============================================================
+
+        const dataAtual = new Date().toLocaleDateString('pt-BR', {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+        });
+
+        dataAtualizacao.textContent = dataAtual;
+        dataSidebar.textContent = dataAtual;
+
+        renderCards(DADOS_MANUAIS);
+        renderSidebar(DADOS_MANUAIS);
+        totalManuais.textContent = DADOS_MANUAIS.length;
+        totalExibindo.textContent = DADOS_MANUAIS.length;
+
+        console.log(`✅ ${DADOS_MANUAIS.length} manuais carregados com sucesso!`);
+        console.log('📚 Corpo de Bombeiros - Biblioteca de Manuais');
+        console.log('🔗 Todos os links do Google Drive estão configurados');
+        console.log('🚒 Versão otimizada para SEO e AdSense');
+    </script>
+</body>
+</html>

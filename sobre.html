@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Biblioteca de Manuais do Corpo de Bombeiros</title>
+    <meta name="description" content="Conheça a Biblioteca de Manuais do Corpo de Bombeiros Militar do Estado de São Paulo. Saiba mais sobre nossa missão e acervo de 52 manuais operacionais.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="canonical" href="https://seu-usuario.github.io/biblioteca-manuais/sobre.html">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f4f6fa; color: #1a1a2e; min-height: 100vh; }
+        
+        .header-bar {
+            background: #0b1a2e;
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .header-bar .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: #fff;
+        }
+        
+        .header-bar .logo-area .icon {
+            background: #c8102e;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #fff;
+        }
+        
+        .header-bar .logo-area h1 { font-size: 18px; font-weight: 700; }
+        .header-bar .logo-area span { font-size: 11px; color: #a0b4c9; display: block; }
+        
+        .header-bar .nav-links { display: flex; gap: 20px; }
+        .header-bar .nav-links a { color: #a0b4c9; text-decoration: none; font-size: 14px; transition: 0.2s; }
+        .header-bar .nav-links a:hover { color: #fff; }
+        .header-bar .nav-links a.active { color: #fff; border-bottom: 2px solid #c8102e; }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .content-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #edf2f7;
+        }
+        
+        .content-card h2 {
+            color: #0b1a2e;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        
+        .content-card .subtitle {
+            color: #7a8fa5;
+            font-size: 15px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 16px;
+        }
+        
+        .content-card p {
+            color: #4a5a6e;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+        
+        .content-card h3 {
+            color: #0b1a2e;
+            font-size: 20px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        
+        .content-card ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+            color: #4a5a6e;
+        }
+        
+        .content-card ul li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .content-card .highlight-box {
+            background: #f0f4fe;
+            border-left: 4px solid #c8102e;
+            padding: 18px 22px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 15px;
+            color: #1a2a40;
+        }
+        
+        .footer {
+            max-width: 900px;
+            margin: 20px auto 40px;
+            padding: 0 20px;
+            text-align: center;
+            color: #a0b4c9;
+            font-size: 13px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-bar { padding: 12px 16px; flex-direction: column; align-items: flex-start; }
+            .content-card { padding: 24px 20px; }
+            .content-card h2 { font-size: 22px; }
+            .header-bar .nav-links { flex-wrap: wrap; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-bar">
+        <div class="logo-area">
+            <div class="icon"><i class="fas fa-fire-extinguisher"></i></div>
+            <div>
+                <h1>Biblioteca de Manuais</h1>
+                <span>Corpo de Bombeiros Militar SP</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Início</a>
+            <a href="sobre.html" class="active"><i class="fas fa-info-circle"></i> Sobre</a>
+            <a href="privacidade.html"><i class="fas fa-shield-alt"></i> Privacidade</a>
+            <a href="contato.html"><i class="fas fa-envelope"></i> Contato</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-card">
+            <h2>Sobre a Biblioteca de Manuais</h2>
+            <div class="subtitle"><i class="fas fa-book-open"></i> Conhecimento a serviço da segurança pública</div>
+            
+            <p>
+                A <strong>Biblioteca de Manuais do Corpo de Bombeiros</strong> é um acervo digital 
+                criado para disponibilizar de forma gratuita e acessível os manuais operacionais 
+                utilizados pelo Corpo de Bombeiros Militar do Estado de São Paulo.
+            </p>
+            
+            <p>
+                Nosso objetivo é democratizar o acesso ao conhecimento técnico e operacional, 
+                oferecendo materiais de referência para profissionais da segurança, estudantes, 
+                pesquisadores e cidadãos em geral que desejam conhecer mais sobre as atividades 
+                e procedimentos da corporação.
+            </p>
+            
+            <h3>📚 O que você encontra aqui</h3>
+            <p>
+                O acervo conta com <strong>52 manuais operacionais</strong> que cobrem todas as 
+                áreas de atuação do Corpo de Bombeiros:
+            </p>
+            <ul>
+                <li><strong>Combate a Incêndios:</strong> técnicas de combate em diferentes cenários (florestal, industrial, edifícios altos, aeronaves, etc.)</li>
+                <li><strong>Salvamento:</strong> terrestre, aquático, em altura, veicular e em estruturas colapsadas</li>
+                <li><strong>Atendimento Pré-Hospitalar:</strong> protocolos de emergência, PHTLS, primeiros socorros</li>
+                <li><strong>Produtos Perigosos:</strong> identificação, contenção e procedimentos em acidentes químicos</li>
+                <li><strong>Comando e Gestão:</strong> sistema de comando em emergências (SICOE), liderança, comunicações</li>
+                <li><strong>Prevenção:</strong> segurança em edificações, educação pública, análise de risco</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <i class="fas fa-shield-alt" style="color:#c8102e; margin-right:10px;"></i>
+                <strong>Missão:</strong> Preservar vidas, o patrimônio e o meio ambiente, por meio de ações 
+                de prevenção, combate a incêndios, salvamento e atendimento pré-hospitalar.
+            </div>
+            
+            <h3>👨‍🚒 Para quem este conteúdo é útil</h3>
+            <ul>
+                <li><strong>Bombeiros militares e civis:</strong> atualização e consulta a procedimentos operacionais</li>
+                <li><strong>Profissionais de segurança:</strong> referência para brigadas de incêndio e segurança do trabalho</li>
+                <li><strong>Estudantes:</strong> material de estudo para cursos técnicos e superiores</li>
+                <li><strong>Pesquisadores:</strong> fonte de informações sobre técnicas e metodologias de bombeiros</li>
+                <li><strong>Público em geral:</strong> conhecimento sobre prevenção e segurança</li>
+            </ul>
+            
+            <h3>🔐 Compromisso com a qualidade</h3>
+            <p>
+                Todos os manuais disponíveis são documentos oficiais do Corpo de Bombeiros Militar 
+                do Estado de São Paulo, atualizados e alinhados com as melhores práticas e normas 
+                técnicas nacionais e internacionais.
+            </p>
+            
+            <div class="highlight-box">
+                <i class="fas fa-phone" style="color:#c8102e; margin-right:10px;"></i>
+                <strong>Emergência:</strong> Em caso de emergência, ligue imediatamente para <strong style="color:#c8102e;">193</strong>.
+            </div>
+            
+            <p style="font-size:13px; color:#7a8fa5; margin-top:20px;">
+                <i class="fas fa-info-circle"></i> Este é um projeto independente de divulgação do conhecimento 
+                técnico do Corpo de Bombeiros Militar do Estado de São Paulo.
+            </p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2026 Biblioteca de Manuais - Corpo de Bombeiros Militar SP</p>
+    </div>
+    
+</body>
+</html>
