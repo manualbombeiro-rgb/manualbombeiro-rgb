@@ -2,40 +2,17 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca de Manuais - Bombeiros</title>
-    
-    <!-- ===== ÍCONES PARA TELA INICIAL DO CELULAR ===== -->
-    <!-- Ícone para iPhone/iPad -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    
-    <!-- Ícone principal (navegadores) -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-    
-    <!-- Manifest para Android (PWA) -->
-    <link rel="manifest" href="site.webmanifest">
-    
-    <!-- Cor do tema para navegadores mobile -->
-    <meta name="theme-color" content="#0b1a2e">
-    <meta name="msapplication-TileColor" content="#c8102e">
-    <!-- ===== FIM ÍCONES ===== -->
-    
-    <!-- ===== META TAGS SEO ===== -->
-    <meta name="description" content="Biblioteca digital com 52 manuais operacionais do Corpo de Bombeiros Militar do Estado de São Paulo. Acesso gratuito a documentos técnicos sobre prevenção, combate a incêndios, salvamento e emergências.">
-    <meta name="keywords" content="corpo de bombeiros, manuais operacionais, bombeiro militar, cbpmesp, combate a incêndio, salvamento, atendimento pré-hospitalar, segurança, prevenção">
-    <meta name="author" content="Corpo de Bombeiros Militar do Estado de São Paulo">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Biblioteca de Manuais - Corpo de Bombeiros Militar SP">
-    <meta property="og:description" content="Acesse 52 manuais operacionais do Corpo de Bombeiros Militar de São Paulo. Documentos técnicos sobre segurança, prevenção e salvamento.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://seu-dominio.com.br/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Biblioteca de Manuais - Corpo de Bombeiros Militar SP">
-    <link rel="canonical" href="https://seu-dominio.com.br/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Biblioteca de Manuais - Corpo de Bombeiros</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- ===== GOOGLE ADSENSE ===== -->
+    <!-- ===== PWA CONFIG ===== -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0b1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- ===== GOOGLE ADSENSE - CONFIGURADO ===== -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1244475888529264" crossorigin="anonymous"></script>
     
     <style>
@@ -47,7 +24,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
             background: #f4f6fa;
             display: flex;
             height: 100vh;
@@ -126,35 +103,8 @@
             text-transform: uppercase;
         }
 
-        .sidebar-nav {
-            padding: 10px 12px 4px;
-            flex-shrink: 0;
-        }
-
-        .sidebar-nav .nav-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 14px;
-            border-radius: 8px;
-            color: #a0b4c9;
-            text-decoration: none;
-            font-size: 13px;
-            transition: 0.2s;
-        }
-
-        .sidebar-nav .nav-link:hover {
-            background: rgba(255, 255, 255, 0.06);
-            color: #fff;
-        }
-
-        .sidebar-nav .nav-link i {
-            width: 20px;
-            color: #c8102e;
-        }
-
         .search-box {
-            padding: 8px 20px 10px;
+            padding: 14px 20px 10px;
             flex-shrink: 0;
         }
 
@@ -197,11 +147,11 @@
         .nav-manuals {
             flex: 1;
             overflow-y: auto;
-            padding: 4px 12px 20px;
+            padding: 10px 12px 20px;
         }
 
         .nav-manuals .manual-item {
-            margin-bottom: 2px;
+            margin-bottom: 4px;
             border-radius: 10px;
             transition: background 0.2s;
         }
@@ -214,7 +164,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 8px 14px;
+            padding: 10px 14px;
             border-radius: 10px;
             cursor: pointer;
             transition: 0.2s;
@@ -239,7 +189,7 @@
 
         .manual-header .manual-title {
             flex: 1;
-            font-size: 12px;
+            font-size: 13px;
             line-height: 1.3;
         }
 
@@ -261,14 +211,11 @@
             display: flex;
             justify-content: space-between;
             flex-shrink: 0;
-            flex-wrap: wrap;
-            gap: 8px;
         }
 
         .sidebar-footer a {
             color: #7a9ab0;
             text-decoration: none;
-            transition: 0.2s;
         }
 
         .sidebar-footer a:hover {
@@ -298,8 +245,6 @@
             border-bottom: 1px solid #e2e8f0;
             flex-shrink: 0;
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
-            flex-wrap: wrap;
-            gap: 12px;
         }
 
         .topbar .hamburger {
@@ -331,7 +276,6 @@
             gap: 16px;
             font-size: 13px;
             color: #3a4a5e;
-            flex-wrap: wrap;
         }
 
         .topbar .stats-badge .stat {
@@ -350,38 +294,6 @@
 
         .content-area {
             padding: 32px 40px;
-        }
-
-        .content-area .content-intro {
-            background: #fff;
-            border-radius: 12px;
-            padding: 28px 32px;
-            margin-bottom: 28px;
-            border: 1px solid #edf2f7;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-        }
-
-        .content-area .content-intro h2 {
-            color: #0b1a2e;
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-
-        .content-area .content-intro p {
-            color: #4a5a6e;
-            line-height: 1.7;
-            margin-bottom: 10px;
-            font-size: 15px;
-        }
-
-        .content-area .content-intro .highlight-box {
-            background: #f0f4fe;
-            border-left: 4px solid #c8102e;
-            padding: 16px 20px;
-            border-radius: 6px;
-            margin-top: 12px;
-            font-size: 14px;
-            color: #1a2a40;
         }
 
         .content-area .content-grid {
@@ -491,6 +403,271 @@
             color: #dce3ec;
         }
 
+        /* ===== CHAT RAG ===== */
+        .chat-fab {
+            position: fixed;
+            bottom: 90px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #c8102e;
+            color: white;
+            border: none;
+            font-size: 26px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(200, 16, 46, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-fab:hover {
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 6px 28px rgba(200, 16, 46, 0.5);
+        }
+
+        .chat-fab .badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: #ffd700;
+            color: #0b1a2e;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        .chat-rag-container {
+            position: fixed;
+            bottom: 160px;
+            right: 24px;
+            width: 400px;
+            max-width: calc(100vw - 48px);
+            max-height: 520px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            animation: slideUp 0.3s ease;
+        }
+
+        .chat-rag-container.open {
+            display: flex;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .chat-header {
+            background: #0b1a2e;
+            color: white;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .chat-header .chat-icon {
+            background: #c8102e;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .chat-header .chat-title {
+            flex: 1;
+        }
+
+        .chat-header .chat-title h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .chat-header .chat-title p {
+            font-size: 11px;
+            opacity: 0.7;
+            margin: 0;
+        }
+
+        .chat-close-btn {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-close-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 14px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-height: 200px;
+            max-height: 280px;
+            background: #f8f9fa;
+        }
+
+        .chat-message {
+            padding: 10px 15px;
+            border-radius: 14px;
+            max-width: 88%;
+            font-size: 14px;
+            line-height: 1.5;
+            word-wrap: break-word;
+            animation: messageIn 0.25s ease;
+        }
+
+        @keyframes messageIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-message.user {
+            background: #c8102e;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-message.bot {
+            background: white;
+            color: #1a1a2e;
+            align-self: flex-start;
+            border: 1px solid #e2e8f0;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .chat-message.bot .source {
+            font-size: 11px;
+            color: #7a8fa5;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #edf2f7;
+        }
+
+        .chat-message.bot .source i {
+            color: #c8102e;
+            margin-right: 4px;
+        }
+
+        .chat-message.loading {
+            background: white;
+            color: #7a8fa5;
+            align-self: flex-start;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-message.loading .dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .chat-message.loading .dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #c8102e;
+            animation: dotPulse 1.2s ease-in-out infinite;
+        }
+
+        .chat-message.loading .dots span:nth-child(2) { animation-delay: 0.2s; }
+        .chat-message.loading .dots span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes dotPulse {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        .chat-input-area {
+            padding: 10px 14px;
+            display: flex;
+            gap: 10px;
+            border-top: 1px solid #e2e8f0;
+            background: white;
+            flex-shrink: 0;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 10px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 24px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s;
+            background: #fafafa;
+        }
+
+        .chat-input-area input:focus {
+            border-color: #c8102e;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(200, 16, 46, 0.08);
+        }
+
+        .chat-input-area input:disabled {
+            opacity: 0.6;
+        }
+
+        .chat-input-area button {
+            background: #c8102e;
+            color: white;
+            border: none;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .chat-input-area button:hover {
+            background: #a00d26;
+            transform: scale(1.05);
+        }
+
+        .chat-input-area button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         /* ===== ADSENSE - BANNER RODAPÉ ===== */
         .adsense-footer {
             background: #ffffff;
@@ -591,12 +768,23 @@
                 min-height: 50px;
             }
 
-            .content-area .content-intro {
-                padding: 20px;
+            .chat-fab {
+                bottom: 80px;
+                right: 16px;
+                width: 54px;
+                height: 54px;
+                font-size: 22px;
             }
 
-            .content-area .content-intro h2 {
-                font-size: 18px;
+            .chat-rag-container {
+                bottom: 140px;
+                right: 16px;
+                max-width: calc(100vw - 32px);
+                max-height: 440px;
+            }
+
+            .chat-messages {
+                max-height: 220px;
             }
         }
 
@@ -620,12 +808,53 @@
                 min-height: 50px;
             }
 
-            .content-area .content-intro {
-                padding: 16px;
+            .chat-fab {
+                bottom: 76px;
+                right: 12px;
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
             }
 
-            .content-area .manual-card {
-                padding: 18px;
+            .chat-rag-container {
+                bottom: 130px;
+                right: 8px;
+                max-width: calc(100vw - 16px);
+                max-height: 400px;
+                border-radius: 12px;
+            }
+
+            .chat-messages {
+                max-height: 180px;
+                padding: 10px 12px;
+            }
+
+            .chat-header {
+                padding: 10px 14px;
+            }
+
+            .chat-header .chat-title h3 {
+                font-size: 13px;
+            }
+
+            .chat-input-area {
+                padding: 8px 10px;
+            }
+
+            .chat-input-area input {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+
+            .chat-input-area button {
+                width: 40px;
+                height: 40px;
+                font-size: 15px;
+            }
+
+            .chat-message {
+                font-size: 13px;
+                padding: 8px 12px;
             }
         }
 
@@ -655,24 +884,8 @@
             </div>
             <div class="brand">
                 <h1>Biblioteca de Manuais</h1>
-                <span>Bombeiros</span>
+                <span>Corpo de Bombeiros</span>
             </div>
-        </div>
-
-        <!-- Navegação adicional -->
-        <div class="sidebar-nav">
-            <a href="index.html" class="nav-link" style="color:#fff; background:rgba(255,255,255,0.06);">
-                <i class="fas fa-home"></i> Início
-            </a>
-            <a href="sobre.html" class="nav-link">
-                <i class="fas fa-info-circle"></i> Sobre
-            </a>
-            <a href="privacidade.html" class="nav-link">
-                <i class="fas fa-shield-alt"></i> Política de Privacidade
-            </a>
-            <a href="contato.html" class="nav-link">
-                <i class="fas fa-envelope"></i> Contato
-            </a>
         </div>
 
         <div class="search-box">
@@ -686,7 +899,7 @@
 
         <div class="sidebar-footer">
             <span><i class="fas fa-book"></i> <span id="totalManuais">0</span> manuais</span>
-            <span><i class="fas fa-sync-alt"></i> <span id="dataSidebar">-</span></span>
+            <a href="#"><i class="fas fa-sync-alt"></i> Atualizado</a>
         </div>
     </aside>
 
@@ -716,42 +929,11 @@
 
         <div class="content-wrapper">
             <section class="content-area" id="contentArea">
-                <!-- INTRODUÇÃO - CONTEÚDO RICO PARA SEO -->
-                <div class="content-intro">
-                    <h2>📚 Biblioteca Digital de Manuais Operacionais</h2>
-                    <p>
-                        Bem-vindo à <strong>Biblioteca de Manuais do Corpo de Bombeiros</strong>, um acervo digital 
-                        completo com <strong>52 manuais operacionais</strong> que abrangem todas as áreas de atuação 
-                        da corporação. Este material é uma referência essencial para profissionais da segurança, 
-                        bombeiros militares, estudantes e interessados em conhecer os procedimentos e técnicas 
-                        utilizados pelo Corpo de Bombeiros Militar do Estado de São Paulo.
-                    </p>
-                    <p>
-                        Os documentos disponíveis neste acervo cobrem temas como <strong>combate a incêndios</strong>, 
-                        <strong>salvamento terrestre e aquático</strong>, <strong>atendimento pré-hospitalar</strong>, 
-                        <strong>operações com produtos perigosos</strong>, <strong>resgate em altura</strong>, 
-                        <strong>incêndios florestais</strong>, entre outras áreas fundamentais para a segurança pública.
-                    </p>
-                    <div class="highlight-box">
-                        <i class="fas fa-shield-alt" style="color:#c8102e; margin-right:10px;"></i>
-                        <strong>Missão do Corpo de Bombeiros:</strong> Preservar vidas, o patrimônio e o meio ambiente, 
-                        por meio de ações de prevenção, combate a incêndios, salvamento e atendimento pré-hospitalar.
-                        <br>
-                        <span style="font-size:13px; color:#5a7a9a; display:block; margin-top:6px;">
-                            <i class="fas fa-phone"></i> Emergência: <strong style="color:#c8102e;">193</strong>
-                        </span>
-                    </div>
-                    <p style="font-size:13px; color:#7a8fa5; margin-top:10px;">
-                        <i class="fas fa-info-circle"></i> Todos os manuais estão disponíveis para consulta gratuita. 
-                        Clique em "Acessar Manual" para visualizar ou baixar o documento completo.
-                    </p>
-                </div>
-
                 <div class="content-grid" id="manualGrid"></div>
             </section>
         </div>
 
-        <!-- ===== ADSENSE - BANNER RODAPÉ ===== -->
+        <!-- ===== ADSENSE - BANNER RODAPÉ (CONFIGURADO) ===== -->
         <div class="adsense-footer">
             <div class="adsense-wrapper">
                 <span class="adsense-label">Publicidade</span>
@@ -771,15 +953,49 @@
         </div>
     </main>
 
+    <!-- ===== BOTÃO DO CHAT ===== -->
+    <button class="chat-fab" id="chatFab" onclick="abrirChat()">
+        <i class="fas fa-robot"></i>
+        <span class="badge">IA</span>
+    </button>
+
+    <!-- ===== JANELA DO CHAT ===== -->
+    <div class="chat-rag-container" id="chatRagContainer">
+        <div class="chat-header">
+            <div class="chat-icon">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chat-title">
+                <h3>Assistente RAG</h3>
+                <p>Pergunte sobre os manuais</p>
+            </div>
+            <button class="chat-close-btn" onclick="fecharChat()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message bot">
+                👋 Olá! Pergunte sobre qualquer manual do Corpo de Bombeiros.
+                <br><small style="color:#7a8fa5;font-size:11px;">Ex: Como combater incêndio em aeronaves?</small>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Digite sua pergunta..." />
+            <button id="chatSendBtn" onclick="enviarPergunta()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
     <script>
         // ============================================================
-        // DADOS DOS MANUAIS - 52 MANUAIS COMPLETOS COM DESCRIÇÕES RICAS
+        // DADOS DOS MANUAIS - 52 MANUAIS COMPLETOS
         // ============================================================
         const DADOS_MANUAIS = [{
             id: 1,
             numero: "001",
             nome: "Salvamento e Combate a Incêndio em Aeronaves",
-            descricao: "Este manual estabelece os procedimentos operacionais padrão para salvamento e combate a incêndios em aeronaves, abordando técnicas de resgate, equipamentos específicos e protocolos de segurança para situações de emergência em aeroportos e áreas de aviação.",
+            descricao: "Procedimentos operacionais para salvamento e combate a incêndios em aeronaves.",
             link: "https://drive.google.com/file/d/1G6GuN6K1JmYPK85_IzCa4hGw6ppZbdCx/view?usp=sharing",
             tipo: "PDF",
             data: "2024-01-15"
@@ -787,7 +1003,7 @@
             id: 2,
             numero: "002",
             nome: "Suprimento de Água em Combate a Incêndios",
-            descricao: "Manual detalhado sobre técnicas e procedimentos para suprimento de água em operações de combate a incêndio, incluindo métodos de captação, armazenamento e distribuição de água para garantir a eficácia das ações de combate.",
+            descricao: "Técnicas e procedimentos para suprimento de água em operações de combate a incêndio.",
             link: "https://drive.google.com/file/d/1Toh6hmu_zFyKgWzsAkighP7YMrGauziq/view?usp=sharing",
             tipo: "PDF",
             data: "2024-02-20"
@@ -795,7 +1011,7 @@
             id: 3,
             numero: "003",
             nome: "Salvamento Terrestre",
-            descricao: "Manual de procedimentos para salvamento terrestre em diversas situações, incluindo resgate em áreas de difícil acesso, atendimento a vítimas em ambientes urbanos e rurais, e técnicas de estabilização e remoção de feridos.",
+            descricao: "Procedimentos operacionais para salvamento terrestre em diversas situações.",
             link: "https://drive.google.com/file/d/1rqCI5RZZjcKQsbJDVCzzz3JTzT-GZm3D/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -803,7 +1019,7 @@
             id: 4,
             numero: "004",
             nome: "Combate a Incêndios Florestais",
-            descricao: "Estratégias e táticas para combate a incêndios em áreas florestais e de vegetação, abordando o comportamento do fogo em diferentes condições climáticas, técnicas de combate direto e indireto, e ações de preservação ambiental.",
+            descricao: "Estratégias e táticas para combate a incêndios em áreas florestais.",
             link: "https://drive.google.com/file/d/1EVslLh28RkdhzaC1S-GQlh9F8QSAKmzw/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -811,7 +1027,7 @@
             id: 5,
             numero: "005",
             nome: "Atendimento a Incêndios em Indústrias",
-            descricao: "Manual de procedimentos para atendimento a ocorrências de incêndio em ambientes industriais, considerando os riscos específicos de cada tipo de indústria, produtos químicos presentes e estratégias de combate em áreas de grande porte.",
+            descricao: "Procedimentos para atendimento a ocorrências de incêndio em ambientes industriais.",
             link: "https://drive.google.com/file/d/1jv76dJt1NGITfVPyq3QDTm3wSYepUMF0/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -819,7 +1035,7 @@
             id: 6,
             numero: "006",
             nome: "Combate a Incêndio em Composições Metroviárias e Túneis",
-            descricao: "Manual operacional para combate a incêndio e salvamento em sistemas metroviários, ferrovias e túneis rodoviários, com foco em evacuação, ventilação tática e resgate em espaços confinados.",
+            descricao: "Operações de combate a incêndio e salvamento em sistemas metroviários, ferroviários e túneis.",
             link: "https://drive.google.com/file/d/1x3IL3RtSgcBKHHYUibiKRCOBqYBsETxz/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -827,7 +1043,7 @@
             id: 7,
             numero: "007",
             nome: "Combate a Incêndios em Instalações Portuárias",
-            descricao: "Procedimentos operacionais para combate a incêndios em instalações portuárias, navios e embarcações, abordando os desafios específicos do ambiente marítimo e técnicas de contenção em áreas de grande movimentação de cargas.",
+            descricao: "Procedimentos para combate a incêndios em instalações portuárias e embarcações.",
             link: "https://drive.google.com/file/d/1ailG7tblILEX5Iw7V_Pa6S7X9ouoU7y8/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -835,7 +1051,7 @@
             id: 8,
             numero: "008",
             nome: "Bombas de Incêndio",
-            descricao: "Guia completo sobre operação, manutenção e emprego de bombas de incêndio em operações, incluindo tipos de bombas, especificações técnicas, procedimentos de teste e manutenção preventiva.",
+            descricao: "Operação, manutenção e emprego de bombas de incêndio em operações.",
             link: "https://drive.google.com/file/d/1_nSdPT4_c7LbaKA-5Ksc9uE0eSmKO9AS/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -843,7 +1059,7 @@
             id: 9,
             numero: "009",
             nome: "Salvamento Aquático",
-            descricao: "Manual de técnicas e procedimentos para salvamento aquático em diferentes cenários, incluindo praias, rios, lagos e piscinas, com foco em prevenção de afogamentos e técnicas de resgate com equipamentos específicos.",
+            descricao: "Técnicas e procedimentos para salvamento aquático em diferentes cenários.",
             link: "https://drive.google.com/file/d/1VyvJNeDNzqFWiHUp-ALW1ZPb6T6pm-uR/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -851,7 +1067,7 @@
             id: 10,
             numero: "010",
             nome: "Salvamento em Enchentes e Inundações",
-            descricao: "Procedimentos operacionais para atuação em situações de enchentes e inundações, abordando resgate de pessoas ilhadas, evacuação de áreas de risco e técnicas de navegação em águas turbulentas.",
+            descricao: "Procedimentos para atuação em situações de enchentes e inundações.",
             link: "https://drive.google.com/file/d/1KrIrsErNMecFcvPZU8sdrABk0jp1_vPN/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -859,7 +1075,7 @@
             id: 11,
             numero: "011",
             nome: "Manual do Guarda-Vidas",
-            descricao: "Manual completo para atuação de guarda-vidas em diferentes ambientes aquáticos, incluindo técnicas de prevenção, resgate, primeiros socorros e uso de equipamentos de salvamento em praias, rios e piscinas.",
+            descricao: "Manual completo para atuação de guarda-vidas em diferentes ambientes.",
             link: "https://drive.google.com/file/d/1uf9M-qu8yBsiiV9qvRpjTmUtDrciZNYi/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -867,7 +1083,7 @@
             id: 12,
             numero: "012",
             nome: "Resgate e Emergências Médicas",
-            descricao: "Manual de procedimentos para resgate e atendimento a emergências médicas, abordando avaliação inicial, suporte básico de vida, imobilização e transporte de vítimas em situações de urgência.",
+            descricao: "Procedimentos para resgate e atendimento a emergências médicas.",
             link: "https://drive.google.com/file/d/1Y8aBXNM1UpGU1QXlXPg_ODRXzUztMiCM/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -875,7 +1091,7 @@
             id: 13,
             numero: "013",
             nome: "Comunicações Operacionais",
-            descricao: "Protocolos e procedimentos para comunicações em operações de bombeiros, incluindo rádio comunicação, códigos operacionais, estrutura de comando e fluxo de informações durante ocorrências.",
+            descricao: "Protocolos e procedimentos para comunicações em operações de bombeiros.",
             link: "https://drive.google.com/file/d/13BvFd1AQn9-zgpKGi1RdTpS7hsH6NWee/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -883,7 +1099,7 @@
             id: 14,
             numero: "014",
             nome: "Ventilação Tática",
-            descricao: "Manual sobre técnicas e estratégias para ventilação tática em operações de combate a incêndio, abordando os princípios de ventilação, equipamentos utilizados e métodos para remoção de fumaça e gases tóxicos.",
+            descricao: "Técnicas e estratégias para ventilação tática em operações de combate a incêndio.",
             link: "https://drive.google.com/file/d/1OHz-Dw3s7Mouyucw446nri4NyoDr3AQQ/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -891,7 +1107,7 @@
             id: 15,
             numero: "015",
             nome: "Condução de Viaturas em Emergências",
-            descricao: "Manual de procedimentos para condução segura de viaturas de bombeiros em situações de emergência, abordando técnicas de direção defensiva, uso de sirenes e sinais luminosos, e protocolos de deslocamento rápido.",
+            descricao: "Procedimentos para condução segura de viaturas de bombeiros em emergências.",
             link: "https://drive.google.com/file/d/1WSN6DstQIMuwn8jv3gQFRt1UuM44NzRB/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -899,7 +1115,7 @@
             id: 16,
             numero: "016",
             nome: "Combate a Incêndio em Edifícios Altos",
-            descricao: "Estratégias e táticas para combate a incêndio em edifícios de múltiplos pavimentos, incluindo técnicas de evacuação, combate interno, ventilação e uso de equipamentos específicos para operações em altura.",
+            descricao: "Estratégias e táticas para combate a incêndio em edifícios de múltiplos pavimentos.",
             link: "https://drive.google.com/file/d/1w7i6cY1l6n5ngKzC8eBzuP8GU_5rRXTR/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -907,7 +1123,7 @@
             id: 17,
             numero: "017",
             nome: "Equipamentos de Proteção Individual",
-            descricao: "Guia detalhado sobre equipamentos de proteção individual e respiratória para bombeiros, incluindo seleção, uso correto, manutenção e inspeção de EPIs para garantir a segurança operacional.",
+            descricao: "Guia sobre equipamentos de proteção individual e respiratória para bombeiros.",
             link: "https://drive.google.com/file/d/1ebSqMqhlEq3-q-QG2pZkiQqUojSQkNtt/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -915,7 +1131,7 @@
             id: 18,
             numero: "018",
             nome: "Proteção de Salvados",
-            descricao: "Manual de procedimentos para proteção de bens e materiais durante operações de combate a incêndio, abordando técnicas de cobertura, remoção e preservação de itens durante intervenções.",
+            descricao: "Procedimentos para proteção de bens e materiais durante operações de combate a incêndio.",
             link: "https://drive.google.com/file/d/1F1VkG_9oliUat9-Xh9BTecu1ZXJAPFHS/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -923,7 +1139,7 @@
             id: 19,
             numero: "019",
             nome: "Pesquisas de Causas de Incêndio",
-            descricao: "Metodologias e procedimentos para investigação de causas de incêndios, abordando técnicas de coleta de evidências, análise de padrões de queima e elaboração de laudos técnicos periciais.",
+            descricao: "Metodologias e procedimentos para investigação de causas de incêndios.",
             link: "https://drive.google.com/file/d/1-AWyCVkGdnQ2JlUhRSzLtDHfUAN-jDj3/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -931,7 +1147,7 @@
             id: 20,
             numero: "020",
             nome: "Aberturas Forçadas",
-            descricao: "Manual de técnicas e equipamentos para abertura forçada em operações de bombeiros, incluindo métodos de entrada rápida em edificações, veículos e estruturas para acesso a vítimas e combate a incêndios.",
+            descricao: "Técnicas e equipamentos para abertura forçada em operações de bombeiros.",
             link: "https://drive.google.com/file/d/10ynMsdOX04kSbBKFWWN6jQTzYcjZhBvs/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -939,7 +1155,7 @@
             id: 21,
             numero: "021",
             nome: "Atendimento a Emergências com Produtos Perigosos",
-            descricao: "Manual de procedimentos para atendimento a emergências envolvendo produtos perigosos, abordando identificação de riscos, contenção de vazamentos, equipamentos de proteção e protocolos de evacuação em acidentes químicos.",
+            descricao: "Procedimentos para atendimento a emergências envolvendo produtos perigosos.",
             link: "https://drive.google.com/file/d/1KypfZw6PnFwkzIKQqfbtJEQtyFTHv25n/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -947,7 +1163,7 @@
             id: 22,
             numero: "022",
             nome: "Princípios de Comando em Operações",
-            descricao: "Manual sobre fundamentos de comando e controle em operações de bombeiros, abordando a estrutura de liderança, tomada de decisão, gestão de recursos e coordenação de equipes em situações de emergência.",
+            descricao: "Fundamentos de comando e controle em operações de bombeiros.",
             link: "https://drive.google.com/file/d/1GBcKvG9xXM8p5t0yfHFeCMNd5KpFfQIA/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -955,7 +1171,7 @@
             id: 23,
             numero: "023",
             nome: "Emprego de Mangueiras e Esguichos",
-            descricao: "Guia completo sobre o emprego de mangueiras, esguichos e acessórios hidráulicos em operações de combate a incêndio, abordando técnicas de manuseio, manutenção e operação de equipamentos hidráulicos.",
+            descricao: "Manual sobre o emprego de mangueiras, esguichos e acessórios hidráulicos.",
             link: "https://drive.google.com/file/d/1vaiVk4l7KhwqPFffx_DmXj-xlGsCc7QY/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -963,7 +1179,7 @@
             id: 24,
             numero: "024",
             nome: "Análise de Risco em Incêndio Estrutural",
-            descricao: "Manual de metodologias para análise de risco em incêndios estruturais, abordando avaliação de segurança de edificações, identificação de vulnerabilidades e elaboração de planos de intervenção.",
+            descricao: "Metodologias para análise de risco em incêndios estruturais.",
             link: "https://drive.google.com/file/d/1G9E4B4Bew7v8pugczfp7eOOVQr_uANj_/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -971,7 +1187,7 @@
             id: 25,
             numero: "025",
             nome: "Emergências em Vasos Pressurizados",
-            descricao: "Procedimentos para atuação em emergências com vasos pressurizados, incluindo identificação de riscos, técnicas de resfriamento, controle de vazamentos e protocolos de evacuação em indústrias.",
+            descricao: "Procedimentos para atuação em emergências com vasos pressurizados.",
             link: "https://drive.google.com/file/d/1oQOvcI57d7aSW3OeI0e-Rnx6aQ6andUj/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -979,7 +1195,7 @@
             id: 26,
             numero: "026",
             nome: "Salvamento em Altura",
-            descricao: "Manual de técnicas e procedimentos para salvamento em altura, abordando rapel, escalada, uso de cordas e equipamentos de ancoragem para resgate em edifícios, pontes e estruturas elevadas.",
+            descricao: "Técnicas e procedimentos para salvamento em altura.",
             link: "https://drive.google.com/file/d/1KHJLxR11ltUwXFpHlOJ94xWt-3lzJNT3/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -987,7 +1203,7 @@
             id: 27,
             numero: "027",
             nome: "Operações de Mergulho",
-            descricao: "Manual de procedimentos para operações de mergulho em emergências, abordando técnicas de mergulho autônomo, equipamentos, segurança subaquática e resgate em ambientes aquáticos.",
+            descricao: "Procedimentos para operações de mergulho em emergências.",
             link: "https://drive.google.com/file/d/1D_LNcA2lCaDGxQaMQOilmZjUHXeAGcMz/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -995,7 +1211,7 @@
             id: 28,
             numero: "028",
             nome: "Combate a Incêndio em Habitação Precária",
-            descricao: "Estratégias e táticas para combate a incêndio em áreas de habitação precária, considerando riscos específicos, acesso limitado e técnicas de combate em comunidades e áreas de vulnerabilidade social.",
+            descricao: "Estratégias para combate a incêndio em áreas de habitação precária.",
             link: "https://drive.google.com/file/d/1eBaTP3fcxQWnEn7PDHO3PDuhgrCq4QNN/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1003,7 +1219,7 @@
             id: 29,
             numero: "029",
             nome: "Operação de Viaturas Aéreas",
-            descricao: "Manual sobre operação de viaturas aéreas em serviços de bombeiros, incluindo procedimentos para uso de helicópteros em resgate, combate a incêndios e apoio logístico em emergências.",
+            descricao: "Manual sobre operação de viaturas aéreas em serviços de bombeiros.",
             link: "https://drive.google.com/file/d/1WpTJWLSaOP1ybhrl7OvaCmUB4fzqKLbQ/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1011,7 +1227,7 @@
             id: 30,
             numero: "030",
             nome: "Equipamento Motomecanizado",
-            descricao: "Guia completo sobre equipamentos motomecanizados utilizados pelo Corpo de Bombeiros, abordando operação, manutenção e utilização de máquinas e ferramentas motorizadas em operações.",
+            descricao: "Guia sobre equipamentos motomecanizados utilizados pelo corpo de bombeiros.",
             link: "https://drive.google.com/file/d/1nhi2L1s4vYTnpY2mG6uA-PIvzkNnUD8B/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1019,7 +1235,7 @@
             id: 31,
             numero: "031",
             nome: "Condicionamento Físico",
-            descricao: "Manual de programa de condicionamento físico para bombeiros operacionais, abordando treinamento físico, preparação física, prevenção de lesões e manutenção da aptidão para o serviço.",
+            descricao: "Programa de condicionamento físico para bombeiros operacionais.",
             link: "https://drive.google.com/file/d/15Z_K8h1auj9c_Kcz84ci6nQ75Yq4sG3I/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1027,7 +1243,7 @@
             id: 32,
             numero: "032",
             nome: "Estratégia e Tática de Combate a Incêndio",
-            descricao: "Manual completo sobre fundamentos estratégicos e táticos para combate a incêndios, abordando planejamento operacional, técnicas de ataque e defesa, e coordenação de equipes em grandes ocorrências.",
+            descricao: "Fundamentos estratégicos e táticos para combate a incêndios.",
             link: "https://drive.google.com/file/d/1IKdD22tlAmqaczFz97I0c5DKs-gw_8Ev/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1035,7 +1251,7 @@
             id: 33,
             numero: "033",
             nome: "Busca e Salvamento em Cobertura Vegetal",
-            descricao: "Manual de procedimentos para busca e salvamento em áreas de cobertura vegetal de risco, incluindo técnicas de navegação, sinalização e resgate em matas, florestas e áreas de difícil acesso.",
+            descricao: "Procedimentos para busca e salvamento em áreas de cobertura vegetal de risco.",
             link: "https://drive.google.com/file/d/1n2L0tdoLjSK4TuXwWktdkuqSYcuLcpPe/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1043,7 +1259,7 @@
             id: 34,
             numero: "034",
             nome: "Educação Pública nos Serviços de Bombeiros",
-            descricao: "Manual de programas e estratégias de educação pública para serviços de bombeiros, abordando campanhas de prevenção, orientação à comunidade e capacitação para situações de emergência.",
+            descricao: "Programas e estratégias de educação pública para serviços de bombeiros.",
             link: "https://drive.google.com/file/d/1na5bGlHFV4l5hvGhC79G47AnfWZ0kXpT/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1051,7 +1267,7 @@
             id: 35,
             numero: "035",
             nome: "Gerenciamento de Crises - Suicídio e Terrorismo",
-            descricao: "Manual de procedimentos para gerenciamento de crises envolvendo tentativas de suicídio e atentados terroristas, abordando técnicas de negociação, isolamento de área e atendimento a vítimas em situações de alta complexidade.",
+            descricao: "Procedimentos para gerenciamento de crises envolvendo suicidas e atentados terroristas.",
             link: "https://drive.google.com/file/d/1yDMhQqxrXaE7zDyw-k1W3jxYwMzqyf5z/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1059,7 +1275,7 @@
             id: 36,
             numero: "036",
             nome: "Segurança no Serviço de Bombeiros",
-            descricao: "Manual de normas e procedimentos de segurança para o serviço de bombeiros, abordando prevenção de acidentes, uso correto de equipamentos e protocolos de segurança em todas as operações.",
+            descricao: "Normas e procedimentos de segurança para o serviço de bombeiros.",
             link: "https://drive.google.com/file/d/1yiS7g8MyYgGoSZsfDlyACWc3dPry6wlE/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1067,7 +1283,7 @@
             id: 37,
             numero: "037",
             nome: "Sistema de Comando em Emergências (SICOE)",
-            descricao: "Manual completo do Sistema de Comando e Operações em Emergências (SICOE), abordando estrutura organizacional, fluxo de comando, gestão de recursos e coordenação em grandes eventos.",
+            descricao: "Manual do Sistema de Comando e Operações em Emergências.",
             link: "https://drive.google.com/file/d/16bca7BWxe2g5Pagwtv3H9TH-NJSOW7MI/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1075,7 +1291,7 @@
             id: 38,
             numero: "038",
             nome: "Comandante de Posto de Bombeiros",
-            descricao: "Manual para comandantes de postos de bombeiros, abordando gestão de equipes, planejamento operacional, administração de recursos e liderança em unidades de bombeiros.",
+            descricao: "Manual para comandantes de postos de bombeiros.",
             link: "https://drive.google.com/file/d/1MgrXIoBJSxnqdpD52Bi8KHrUgPJNgiV_/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1083,7 +1299,7 @@
             id: 39,
             numero: "039",
             nome: "Liderança",
-            descricao: "Manual sobre princípios e práticas de liderança no serviço de bombeiros, abordando desenvolvimento de líderes, tomada de decisão, motivação de equipes e gestão de conflitos.",
+            descricao: "Princípios e práticas de liderança no serviço de bombeiros.",
             link: "https://drive.google.com/file/d/1c274TMiS2wHgXK9K-5h8TRFd7TlPmjDi/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1091,7 +1307,7 @@
             id: 40,
             numero: "040",
             nome: "Atendimento a Emergências com Produtos Radioativos",
-            descricao: "Manual de procedimentos para atendimento a emergências envolvendo produtos radioativos, abordando identificação de riscos, proteção radiológica, contenção e descontaminação em acidentes nucleares.",
+            descricao: "Procedimentos para atendimento a emergências envolvendo produtos radioativos.",
             link: "https://drive.google.com/file/d/1FFukPNvX-6i490QMHCWYkSDYPrUGlmlX/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1099,7 +1315,7 @@
             id: 41,
             numero: "041",
             nome: "Atuação do CBM na Defesa Civil",
-            descricao: "Manual sobre atuação do Corpo de Bombeiros nas atividades de Defesa Civil, abordando prevenção, resposta e recuperação em desastres naturais e eventos adversos.",
+            descricao: "Manual sobre atuação do Corpo de Bombeiros nas atividades de Defesa Civil.",
             link: "https://drive.google.com/file/d/1zCrhSAZZOAwOxCcFp0q-VOcxuX3cXB7F/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1107,7 +1323,7 @@
             id: 42,
             numero: "042",
             nome: "Combate a Incêndio em Local Confinado",
-            descricao: "Manual de procedimentos para combate a incêndio em ambientes confinados, abordando técnicas de entrada, respiração autônoma, monitoramento de gases e resgate em espaços de difícil acesso.",
+            descricao: "Procedimentos para combate a incêndio em ambientes confinados.",
             link: "https://drive.google.com/file/d/16RPIHr6YWaf90qSfjRUag_AHjk3DIhSf/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1115,7 +1331,7 @@
             id: 43,
             numero: "043",
             nome: "Emprego de Espuma Mecânica",
-            descricao: "Manual completo sobre emprego de espuma mecânica no combate a incêndios, abordando tipos de espuma, equipamentos de aplicação, técnicas de uso e manutenção de sistemas de espuma.",
+            descricao: "Manual sobre emprego de espuma mecânica no combate a incêndios.",
             link: "https://drive.google.com/file/d/1DGqHnOAosHn09nrPD2NhuNtFOjN9Qdv_/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1123,7 +1339,7 @@
             id: 44,
             numero: "044",
             nome: "Treinamento de Brigada de Incêndio",
-            descricao: "Manual para treinamento prático de brigadas de incêndio, abordando formação de equipes, técnicas de combate, uso de equipamentos e procedimentos de evacuação para edificações.",
+            descricao: "Manual para treinamento prático de brigadas de incêndio.",
             link: "https://drive.google.com/file/d/1vKEdCbwD_iqwU8liBE4qiiTs4Fhl1H1i/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1131,7 +1347,7 @@
             id: 45,
             numero: "045",
             nome: "Aspectos Legais no Serviço de Bombeiros",
-            descricao: "Manual de fundamentos legais aplicáveis ao serviço de bombeiros, abordando legislação, normas técnicas, responsabilidade civil e criminal, e aspectos jurídicos da atividade operacional.",
+            descricao: "Fundamentos legais aplicáveis ao serviço de bombeiros.",
             link: "https://drive.google.com/file/d/19OwpxbHWkhFq_jh1tWV2Jq3Ik0rAcn-P/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1139,7 +1355,7 @@
             id: 46,
             numero: "046",
             nome: "Meteorologia Aplicada ao Serviço de Bombeiros",
-            descricao: "Manual de conceitos meteorológicos aplicados às operações de bombeiros, abordando previsão do tempo, comportamento de incêndios em diferentes condições climáticas e planejamento operacional.",
+            descricao: "Conceitos meteorológicos aplicados às operações de bombeiros.",
             link: "https://drive.google.com/file/d/1U_yIGPUaCizzC6goat3-G69aK_6SaARE/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1147,7 +1363,7 @@
             id: 47,
             numero: "047",
             nome: "Relacionamento com a Imprensa",
-            descricao: "Manual para relacionamento com a imprensa em situações de emergência, abordando técnicas de comunicação, preparação de entrevistas, divulgação de informações e gestão de crise midiática.",
+            descricao: "Manual para relacionamento com a imprensa em situações de emergência.",
             link: "https://drive.google.com/file/d/1eSb8L0yczImyaUUULb6y-rlr61fYPhUD/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1155,7 +1371,7 @@
             id: 48,
             numero: "048",
             nome: "Segurança contra Incêndio em Edificações",
-            descricao: "Manual de normas e procedimentos para segurança contra incêndio em edificações e áreas de risco, abordando sistemas de prevenção, saídas de emergência, extintores e sistemas de alarme.",
+            descricao: "Normas e procedimentos para segurança contra incêndio em edificações.",
             link: "https://drive.google.com/file/d/1xjeDIRiAb76wJSZY8dMlMTVuWfYkTzaI/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1163,7 +1379,7 @@
             id: 49,
             numero: "049",
             nome: "Salvamento Veicular",
-            descricao: "Manual de técnicas e procedimentos para salvamento veicular, abordando desencarceramento, estabilização de veículos, corte de ferragens e atendimento a vítimas em acidentes de trânsito.",
+            descricao: "Técnicas e procedimentos para salvamento veicular.",
             link: "https://drive.google.com/file/d/1Pc6IFZ_jwGqqOhc6xU5TL0MJqoOF78oD/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1171,7 +1387,7 @@
             id: 50,
             numero: "050",
             nome: "PHTLS - Atendimento Pré-Hospitalar",
-            descricao: "Manual PHTLS para atendimento pré-hospitalar em lesões traumáticas, abordando avaliação primária e secundária, imobilização, controle de hemorragias e transporte de vítimas.",
+            descricao: "Manual PHTLS para atendimento pré-hospitalar em lesões traumáticas.",
             link: "https://drive.google.com/file/d/1fjQ5V2PqvY-SHjlVUvgPTfEA6GrngrqI/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1179,7 +1395,7 @@
             id: 51,
             numero: "051",
             nome: "Procedimentos para Tentativas de Suicídio",
-            descricao: "Manual de procedimentos operacionais para atendimento a ocorrências de tentativas de suicídio, abordando técnicas de abordagem, negociação, contenção e encaminhamento para atendimento especializado.",
+            descricao: "Procedimentos operacionais para atendimento a ocorrências de tentativas de suicídio.",
             link: "https://drive.google.com/file/d/1hR19lCpxTx4nH_lxZ-EIN_TbyxDIsfNs/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1187,7 +1403,7 @@
             id: 52,
             numero: "052",
             nome: "Protocolo de Atendimento Pré-Hospitalar",
-            descricao: "Manual de protocolos para atendimento pré-hospitalar em emergências, abordando suporte básico e avançado de vida, medicações de emergência, monitoramento e transporte de pacientes críticos.",
+            descricao: "Protocolos para atendimento pré-hospitalar em emergências.",
             link: "https://drive.google.com/file/d/1J8lkvZvcxZ9O1jFVctFOm4-RJWp9grzR/view?usp=sharing",
             tipo: "PDF",
             data: "2024-03-10"
@@ -1202,7 +1418,6 @@
         const totalManuais = document.getElementById('totalManuais');
         const totalExibindo = document.getElementById('totalExibindo');
         const dataAtualizacao = document.getElementById('dataAtualizacao');
-        const dataSidebar = document.getElementById('dataSidebar');
 
         // Renderiza a sidebar com todos os manuais
         function renderSidebar(manuais) {
@@ -1340,18 +1555,146 @@
         });
 
         // ============================================================
+        // CHAT RAG - CONFIGURAÇÃO
+        // ============================================================
+
+        const CONFIG_CHAT = {
+            // ⚠️ SUBSTITUA PELA URL DO SEU WEBHOOK NO N8N ⚠️
+            API_URL: "https://seu-n8n-instance.com/webhook-pergunta",
+            TIMEOUT: 30000,
+            MSG_ERRO: "❌ Erro ao processar. Tente novamente.",
+            MSG_NAO_ENCONTRADO: "📭 Informação não encontrada nos manuais."
+        };
+
+        // ============================================================
+        // FUNÇÕES DO CHAT
+        // ============================================================
+
+        const chatContainer = document.getElementById('chatRagContainer');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const chatSendBtn = document.getElementById('chatSendBtn');
+
+        function abrirChat() {
+            chatContainer.classList.add('open');
+            document.getElementById('chatFab').style.display = 'none';
+            setTimeout(() => chatInput.focus(), 300);
+        }
+
+        function fecharChat() {
+            chatContainer.classList.remove('open');
+            document.getElementById('chatFab').style.display = 'flex';
+        }
+
+        function adicionarMensagem(texto, tipo, isLoading = false) {
+            const div = document.createElement('div');
+            div.className = `chat-message ${tipo}`;
+            if (isLoading) {
+                div.className += ' loading';
+                div.innerHTML = `
+                    <span>Pensando</span>
+                    <div class="dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                `;
+                div.id = 'loading-message';
+            } else {
+                div.innerHTML = texto;
+            }
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return div.id || null;
+        }
+
+        function removerMensagem(id) {
+            if (id) {
+                const el = document.getElementById(id);
+                if (el) el.remove();
+            }
+            document.querySelectorAll('.chat-message.loading').forEach(el => el.remove());
+        }
+
+        async function enviarPergunta() {
+            const mensagem = chatInput.value.trim();
+            if (!mensagem) return;
+
+            adicionarMensagem(mensagem, 'user');
+            chatInput.value = '';
+            chatInput.disabled = true;
+            chatSendBtn.disabled = true;
+
+            const loadingId = adicionarMensagem('', 'bot', true);
+
+            try {
+                const payload = {
+                    pergunta: mensagem,
+                    timestamp: new Date().toISOString()
+                };
+
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), CONFIG_CHAT.TIMEOUT);
+
+                const response = await fetch(CONFIG_CHAT.API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                    signal: controller.signal
+                });
+
+                clearTimeout(timeoutId);
+
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+                const data = await response.json();
+                removerMensagem(loadingId);
+
+                if (data.resposta && data.resposta !== 'Informação não encontrada') {
+                    let respostaHtml = data.resposta.replace(/\n/g, '<br>');
+                    if (data.fontes && data.fontes.length > 0) {
+                        respostaHtml += `<div class="source"><i class="fas fa-book"></i> Fontes: ${data.fontes.join(', ')}</div>`;
+                    }
+                    adicionarMensagem(respostaHtml, 'bot');
+                } else {
+                    adicionarMensagem(CONFIG_CHAT.MSG_NAO_ENCONTRADO, 'bot');
+                }
+
+            } catch (error) {
+                console.error('Erro no chat:', error);
+                removerMensagem(loadingId);
+                if (error.name === 'AbortError') {
+                    adicionarMensagem('⏰ Tempo esgotado. Tente novamente.', 'bot');
+                } else {
+                    adicionarMensagem(CONFIG_CHAT.MSG_ERRO, 'bot');
+                }
+            } finally {
+                chatInput.disabled = false;
+                chatSendBtn.disabled = false;
+                chatInput.focus();
+            }
+        }
+
+        // Evento Enter no chat
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                enviarPergunta();
+            }
+        });
+
+        // ============================================================
         // INICIALIZAÇÃO
         // ============================================================
 
-        const dataAtual = new Date().toLocaleDateString('pt-BR', {
+        // Atualiza data
+        dataAtualizacao.textContent = new Date().toLocaleDateString('pt-BR', {
             day: '2-digit',
             month: 'short',
             year: 'numeric'
         });
 
-        dataAtualizacao.textContent = dataAtual;
-        dataSidebar.textContent = dataAtual;
-
+        // Mostra todos os manuais
         renderCards(DADOS_MANUAIS);
         renderSidebar(DADOS_MANUAIS);
         totalManuais.textContent = DADOS_MANUAIS.length;
@@ -1359,10 +1702,9 @@
 
         console.log(`✅ ${DADOS_MANUAIS.length} manuais carregados com sucesso!`);
         console.log('📚 Corpo de Bombeiros - Biblioteca de Manuais');
+        console.log('🤖 Chat RAG configurado com IA');
+        console.log('📢 AdSense configurado: ca-pub-1244475888529264');
         console.log('🔗 Todos os links do Google Drive estão configurados');
-        console.log('🚒 Versão otimizada para SEO e AdSense');
-        console.log('📊 AdSense configurado com slot: 9556405903');
-        console.log('📱 Ícones para tela inicial configurados!');
     </script>
 </body>
 </html>
